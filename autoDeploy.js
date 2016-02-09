@@ -5,7 +5,6 @@ var process = require('child_process');
 var fs=require('fs');
 
 if(!fs.existsSync("./public")){
-  console.log("!!!");
   pullAndGen();
 }
 
@@ -21,12 +20,21 @@ handler.on('error', function (err) {
   console.error('Error:', err.message)
 })
 
-handler.on('push', function (event) {
-  console.log('Received a push event for %s at %s',
-    event.payload.repository.name,
-    Date.now());
-    pullAndGen();
+// handler.on('push', function (event) {
+//   console.log('Received a push event for %s at %s',
+//     event.payload.repository.name,
+//     Date.now());
+//     pullAndGen();
     
+// })
+
+handler.on('*',function(event){
+  if(event.event=="push"){
+     console.log('Received a push event for %s at %s',
+     event.payload.repository.name,
+     Date.now());
+     pullAndGen();
+  }
 })
 
 function pullAndGen(){
