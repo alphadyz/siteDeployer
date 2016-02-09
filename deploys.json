@@ -5,7 +5,7 @@
     "deploys": [{
         "name": "Deploy webhook deploy",
         "type": "github",
-        "repo": "https://github.com/Camme/webhook-deployer",
+        "repo": "https://github.com/opencas/site.git",
         "basepath": "./",
         "command": "git pull && hexo generate",
         "branch": "master"
