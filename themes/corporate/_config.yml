@@ -1,0 +1,46 @@
+# Header Menu
+menu:
+  HOME: /
+  # Projects: /projects/
+  BLOG: /archives/ # can set archive-dir in root config to custom value
+  FORUM: https://forum.opencas.org
+  MIRRORS: /mirrors/
+  ABOUT: /about/
+   
+rss: /atom.xml
+
+# Content
+excerpt_link: Read More
+fancybox: true # whether or not to load the fancybox library
+
+# Integrations
+disqus_shortname: opencas
+google_analytics:
+swiftype_install_key: 
+
+# Social
+social:
+  github: https://github.com/orgs/opencas
+  weibo: http://weibo.com/osclubofcas
+  qq: http://jq.qq.com/?_wv=1027&k=2HMkzUQ
+  envelope-o: mailto:admin@opencas.org
+  rss: atom.xml
+  
+# Miscellaneous
+color_scheme: blue   # options: blue, gray, green, orange, red, turquoise
+favicon: /favicon.ico # path from root of hexo site
+twitter_widget_id: "678830341331820544" # as a string, from https://twitter.com/settings/widgets
+twitter_username: computerlab_ # twitter username without the @
+default_author: Anonymous
+
+about: 中国科学院开源软件协会是由中国科学院大学(UCAS)研究生组成的开源技术社区。<br/><br/>协会秉承“开放，自由，分享”的理念，聚集开源爱好者，分享开源技术，传递开源理念，为科学院的同学创建平台参与开源项目，与其他开源社区、企业合作交流。
+phone: ""
+email: admin@opencas.org
+qq: 207064549
+qqgroup: http://jq.qq.com/?_wv=1027&k=2HMkzUQ
+address_1: No.4，Zhongguancun South Fourth Street, Beijing, China 
+address_2: 北京市 海淀区 中关村南四街4号
+address_3: ""
+skype: ptsteadman
+lat: 40.715911 
+long: -73.962147
