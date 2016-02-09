@@ -1,0 +1,7 @@
+{
+    "uid": "sitehook",
+    "append": true,
+    "watch": true,
+    "script": "autoDeploy.js",
+    "sourceDir": "./"
+}

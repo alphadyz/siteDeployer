@@ -17,6 +17,7 @@
     "autodeploy"
   ],
   "dependencies": {
+    "forever": "^0.15.1",
     "github-webhook-handler": "^0.5.0",
     "hexo": "^3.1.1",
     "hexo-browsersync": "^0.2.0",
@@ -29,9 +30,9 @@
     "hexo-renderer-stylus": "^0.3.0",
     "hexo-server": "^0.1.2"
   },
-  "scripts":{
-    "start":"node autoDeploy.js"
-    },
+  "scripts": {
+    "start": "forever start forever.json"
+  },
   "author": "jasine",
   "license": "MIT",
   "bugs": {
