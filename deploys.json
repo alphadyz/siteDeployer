@@ -1,12 +1,12 @@
 {
     "port": 8086,
-    "username": "supercooluser",
-    "password": "with-a-LONG-password",
+    "username": "jasine",
+    "password": "c65709192",
     "deploys": [{
         "name": "Deploy webhook deploy",
         "type": "github",
         "repo": "https://github.com/opencas/site.git",
-        "basepath": "./",
+        "basepath": "/Users/jasine/Desktop/OpenCasSite/site",
         "command": "git pull && hexo generate",
         "branch": "master"
     }]
