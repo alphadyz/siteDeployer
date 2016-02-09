@@ -1,0 +1,13 @@
+{
+    "port": 8086,
+    "username": "supercooluser",
+    "password": "with-a-LONG-password",
+    "deploys": [{
+        "name": "Deploy webhook deploy",
+        "type": "github",
+        "repo": "https://github.com/Camme/webhook-deployer",
+        "basepath": "./",
+        "command": "git pull && hexo generate",
+        "branch": "master"
+    }]
+}
