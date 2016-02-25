@@ -3,19 +3,19 @@
 import os,re
 import time
 import json
-def getdirsize(dir): 
-    size = 0L  
-    for root, dirs, files in os.walk(dir):  
-        size += sum([os.path.getsize(os.path.join(root, name)) for name in files])  
-    return size  
+def getdirsize(dir):
+    size = 0L
+    for root, dirs, files in os.walk(dir):
+        size += sum([os.path.getsize(os.path.join(root, name)) for name in files])
+    return size
 
 
-def GetCurPathInfo():  
+def GetCurPathInfo():
     CurPath = '/data/mirrors/'
-    ChildrenList = os.listdir(CurPath)  
+    ChildrenList = os.listdir(CurPath)
     ChildrenList.sort()
 
-    InfoDict = dict()  
+    InfoDict = dict()
 
     last_modify_file_dict = {
         'centos' : '/timestamp.txt',
@@ -30,34 +30,33 @@ def GetCurPathInfo():
     }
 
     official = ["apache","archlinux","centos","cran","deepin","deepin-cd","eclipse","epel","ezgo","mariadb","raspbian"]
- 
+
     for Name in ChildrenList:
+        tempDict={}
         if Name=='fancin':
             continue
         if os.path.isdir(CurPath + os.path.sep + Name):
-        tempDict = {}
             if os.path.exists("/tmp" + os.path.sep + Name):
-        tempDict["state"] = "syncing"
+            tempDict["state"] = "syncing"
             else:
-        tempDict["state"] = "success"
+            tempDict["state"] = "success"
         if Name in official:
-        tempDict["official"]=True;
+            tempDict["official"]=True;
         else:
-        tempDict["official"]=False;
+            tempDict["official"]=False;
         if Name in help_dict:
-        tempDict["doc"]=help_dict[Name]
-            tempInfo = os.stat(CurPath + os.path.sep + Name)
-            if Name in last_modify_file_dict:
-                tempInfo = os.stat(CurPath + os.path.sep + Name + last_modify_file_dict[Name])
-            # tempDict = dict( [('up_time', time.ctime(tempInfo.st_mtime)),('Help','http://www.opencas.cn/'),('link','http://mirrors.opencas.cn/'+Name)])
+            tempDict["doc"]=help_dict[Name]
+        tempInfo = os.stat(CurPath + os.path.sep + Name)
+        if Name in last_modify_file_dict:
+            tempInfo = os.stat(CurPath + os.path.sep + Name + last_modify_file_dict[Name])
         tempDict["up_time"] = time.ctime(tempInfo.st_mtime)
         tempDict["link"] = 'http://mirrors.opencas.cn/' + Name
-            InfoDict[Name] = tempDict  
+        InfoDict[Name] = tempDict
     return InfoDict
 
 
 def ContentGen(InfoDict):
-    # keys = InfoDict.keys() 
+    # keys = InfoDict.keys()
     # keys.sort()
     return json.dumps(InfoDict)
 
@@ -66,8 +65,8 @@ def main():
     Content = ContentGen(InfoDict)
 
 
-    # print Content
-    with open(os.path.split(os.path.realpath(__file__))[0]+"./state.json", "w") as outFile:
+    print Content
+    with open(os.path.split(os.path.realpath(__file__))[0]+"/state.json", "w") as outFile:
         outFile.write(Content)
 
 if __name__ == '__main__':
