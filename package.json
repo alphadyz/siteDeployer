@@ -31,7 +31,9 @@
     "hexo-server": "^0.1.2"
   },
   "scripts": {
-    "start": "forever start forever.json"
+    "stop":"forever stopall",
+    "start": " forever start forever.json",
+    "restart": "forever stopall && forever start forever.json"
   },
   "author": "jasine",
   "license": "MIT",

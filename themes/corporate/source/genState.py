@@ -25,52 +25,50 @@ def GetCurPathInfo():
     }
 
     help_dict={
-    	'npm':'http://docs.mirrors.opencas.org/latest/npm/',
-	'pypi':'http://docs.mirrors.opencas.org/latest/pypi/'
+        'npm':'http://docs.mirrors.opencas.org/latest/npm/',
+        'pypi':'http://docs.mirrors.opencas.org/latest/pypi/'
     }
 
-    official = ["apache","centos"]
+    official = ["apache","archlinux","centos","cran","deepin","deepin-cd","eclipse","epel","ezgo","mariadb","raspbian"]
  
     for Name in ChildrenList:
+        if Name='fancin':
+            continue
         if os.path.isdir(CurPath + os.path.sep + Name):
-	    tempDict = {}
+        tempDict = {}
             if os.path.exists("/tmp" + os.path.sep + Name):
-		tempDict["state"] = "syncing"
+        tempDict["state"] = "syncing"
             else:
-		tempDict["state"] = "success"
-	    if Name in official:
-		tempDict["official"]=True;
-	    else:
-		tempDict["official"]=False;
-	    if Name in help_dict:
-		tempDict["doc"]=help_dict[Name]
+        tempDict["state"] = "success"
+        if Name in official:
+        tempDict["official"]=True;
+        else:
+        tempDict["official"]=False;
+        if Name in help_dict:
+        tempDict["doc"]=help_dict[Name]
             tempInfo = os.stat(CurPath + os.path.sep + Name)
             if Name in last_modify_file_dict:
                 tempInfo = os.stat(CurPath + os.path.sep + Name + last_modify_file_dict[Name])
             # tempDict = dict( [('up_time', time.ctime(tempInfo.st_mtime)),('Help','http://www.opencas.cn/'),('link','http://mirrors.opencas.cn/'+Name)])
-	    tempDict["up_time"] = time.ctime(tempInfo.st_mtime)
-	    tempDict["link"] = 'http://mirrors.opencas.cn/' + Name
+        tempDict["up_time"] = time.ctime(tempInfo.st_mtime)
+        tempDict["link"] = 'http://mirrors.opencas.cn/' + Name
             InfoDict[Name] = tempDict  
     return InfoDict
 
 
 def ContentGen(InfoDict):
-    Content = dict()
+    # keys = InfoDict.keys() 
+    # keys.sort()
     return json.dumps(InfoDict)
 
 def main():
     InfoDict = GetCurPathInfo()
     Content = ContentGen(InfoDict)
 
-    # keys = Content.keys() 
-    # keys.sort()
 
     # print Content
-    with open("./state.json", "w") as outFile:
+    with open(os.path.split(os.path.realpath(__file__))[0]+"./state.json", "w") as outFile:
         outFile.write(Content)
 
 if __name__ == '__main__':
     main()
-
-
-
