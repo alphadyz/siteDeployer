@@ -32,7 +32,7 @@ def GetCurPathInfo():
     official = ["apache","archlinux","centos","cran","deepin","deepin-cd","eclipse","epel","ezgo","mariadb","raspbian"]
  
     for Name in ChildrenList:
-        if Name='fancin':
+        if Name=='fancin':
             continue
         if os.path.isdir(CurPath + os.path.sep + Name):
         tempDict = {}
