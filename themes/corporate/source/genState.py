@@ -65,7 +65,6 @@ def main():
     Content = ContentGen(InfoDict)
 
 
-    print Content
     with open(os.path.split(os.path.realpath(__file__))[0]+"/state.json", "w") as outFile:
         outFile.write(Content)
 
