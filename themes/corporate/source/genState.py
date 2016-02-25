@@ -1,0 +1,76 @@
+#!/usr/bin/python
+#coding:utf-8
+import os,re
+import time
+import json
+def getdirsize(dir): 
+    size = 0L  
+    for root, dirs, files in os.walk(dir):  
+        size += sum([os.path.getsize(os.path.join(root, name)) for name in files])  
+    return size  
+
+
+def GetCurPathInfo():  
+    CurPath = '/data/mirrors/'
+    ChildrenList = os.listdir(CurPath)  
+    ChildrenList.sort()
+
+    InfoDict = dict()  
+
+    last_modify_file_dict = {
+        'centos' : '/timestamp.txt',
+        'android' :'/repository',
+        'epel':'/fullfilelist',
+        'pypi':'/status'
+    }
+
+    help_dict={
+    	'npm':'http://docs.mirrors.opencas.org/latest/npm/',
+	'pypi':'http://docs.mirrors.opencas.org/latest/pypi/'
+    }
+
+    official = ["apache","centos"]
+ 
+    for Name in ChildrenList:
+        if os.path.isdir(CurPath + os.path.sep + Name):
+	    tempDict = {}
+            if os.path.exists("/tmp" + os.path.sep + Name):
+		tempDict["state"] = "syncing"
+            else:
+		tempDict["state"] = "success"
+	    if Name in official:
+		tempDict["official"]=True;
+	    else:
+		tempDict["official"]=False;
+	    if Name in help_dict:
+		tempDict["doc"]=help_dict[Name]
+            tempInfo = os.stat(CurPath + os.path.sep + Name)
+            if Name in last_modify_file_dict:
+                tempInfo = os.stat(CurPath + os.path.sep + Name + last_modify_file_dict[Name])
+            # tempDict = dict( [('up_time', time.ctime(tempInfo.st_mtime)),('Help','http://www.opencas.cn/'),('link','http://mirrors.opencas.cn/'+Name)])
+	    tempDict["up_time"] = time.ctime(tempInfo.st_mtime)
+	    tempDict["link"] = 'http://mirrors.opencas.cn/' + Name
+            InfoDict[Name] = tempDict  
+    return InfoDict
+
+
+def ContentGen(InfoDict):
+    Content = dict()
+    return json.dumps(InfoDict)
+
+def main():
+    InfoDict = GetCurPathInfo()
+    Content = ContentGen(InfoDict)
+
+    # keys = Content.keys() 
+    # keys.sort()
+
+    # print Content
+    with open("./state.json", "w") as outFile:
+        outFile.write(Content)
+
+if __name__ == '__main__':
+    main()
+
+
+

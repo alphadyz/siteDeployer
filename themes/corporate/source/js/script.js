@@ -1,4 +1,11 @@
 (function($){
+
+  //mirror state
+
+  $.get("/state.json",function(result){
+    alert(result);
+  })
+
   // Search
   var $searchWrap = $('#search-form-wrap'),
     isSearchAnim = false,
