@@ -64,6 +64,42 @@
   </script>
 <% } %>
 
+<% if (page.layout == "mirrors"){ %>
+  <script>
+    $.getJSON("/state.json",function(res){
+      var str="";
+      for(item in res){
+        var cur=res[item];
+        var tooltip='';
+        var offi='';
+        if(cur.official){
+          offi+='<td><i class="fa fa-check"></td>';
+        }else{
+          offi+='<td></td>';
+        }
+        if(cur.doc)
+          tooltip+='<a href="'+cur.doc+'"><i  data-toggle="tooltip" title="Click to see docs and help" style="margin-left:8px;" class="glyphicon glyphicon-question-sign"></i></a>';
+
+        if(cur.state=="syncing"){
+          str+='<tr class="info">\
+              <td><a href="'+cur.link+'">'+item+'</a>'+tooltip+'</td>'+offi+'<td>'+cur.up_time+'</td>\
+              <td><button class="btn btn-xs sync sync-info btn-info">Syncing</button></td>'
+        }else{
+          str+='<tr>\
+              <td><a href="'+cur.link+'">'+item+'</a>'+tooltip+'</td>'+offi+
+              '<td>'+cur.up_time+'</td>\
+          <td><button class="btn btn-xs sync sync-success btn-success">success</button></td>'
+        }
+
+        str+="</tr>";
+      }
+      console.log(str);
+      $("#mirror_list").html(str);
+      $("[data-toggle='tooltip']").tooltip();
+  });
+  </script>
+<% } %>
+
 
 <!-- END PAGE-SPECIFIC PLUGINS --> 
 

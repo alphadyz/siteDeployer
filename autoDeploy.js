@@ -38,7 +38,7 @@ handler.on('*',function(event){
 })
 
 function pullAndGen(){
-  var cmd=process.exec("git pull && hexo generate");
+  var cmd=process.exec("git pull && hexo generate && cd public && python ./genState.py");
     cmd.on('err',function(err){
       console.log(err);
     });

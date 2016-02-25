@@ -1,10 +1,20 @@
+(function(){
+  $.getJSON("/state.json",function(result){
+    console.log(result);
+  })
+})
+
+function getState(){
+  $.getJSON("/state.json",function(result){
+    console.log(result);
+  })
+}
+
 (function($){
 
   //mirror state
 
-  $.get("/state.json",function(result){
-    alert(result);
-  })
+  
 
   // Search
   var $searchWrap = $('#search-form-wrap'),
