@@ -37,9 +37,9 @@ def GetCurPathInfo():
             continue
         if os.path.isdir(CurPath + os.path.sep + Name):
             if os.path.exists("/tmp" + os.path.sep + Name):
-            tempDict["state"] = "syncing"
+                tempDict["state"] = "syncing"
             else:
-            tempDict["state"] = "success"
+                tempDict["state"] = "success"
         if Name in official:
             tempDict["official"]=True;
         else:
