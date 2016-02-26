@@ -69,7 +69,9 @@
     $.getJSON("/state.json",function(res){
       var str="";
       for(item in res){
-        var cur=res[item];
+        var cur=res[item][1];
+        var name=res[item][0];
+        console.log(name);
         var tooltip='';
         var offi='';
         if(cur.official){
@@ -82,18 +84,17 @@
 
         if(cur.state=="syncing"){
           str+='<tr class="info">\
-              <td><a href="'+cur.link+'">'+item+'</a>'+tooltip+'</td>'+offi+'<td>'+cur.up_time+'</td>\
+              <td><a href="'+cur.link+'">'+name+'</a>'+tooltip+'</td>'+offi+'<td>'+cur.up_time+'</td>\
               <td><button class="btn btn-xs sync sync-info btn-info">Syncing</button></td>'
         }else{
           str+='<tr>\
-              <td><a href="'+cur.link+'">'+item+'</a>'+tooltip+'</td>'+offi+
+              <td><a href="'+cur.link+'">'+name+'</a>'+tooltip+'</td>'+offi+
               '<td>'+cur.up_time+'</td>\
           <td><button class="btn btn-xs sync sync-success btn-success">success</button></td>'
         }
 
         str+="</tr>";
       }
-      console.log(str);
       $("#mirror_list").html(str);
       $("[data-toggle='tooltip']").tooltip();
   });

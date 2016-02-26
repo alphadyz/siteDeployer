@@ -40,18 +40,20 @@ def GetCurPathInfo():
                 tempDict["state"] = "syncing"
             else:
                 tempDict["state"] = "success"
-        if Name in official:
-            tempDict["official"]=True;
-        else:
-            tempDict["official"]=False;
-        if Name in help_dict:
-            tempDict["doc"]=help_dict[Name]
-        tempInfo = os.stat(CurPath + os.path.sep + Name)
-        if Name in last_modify_file_dict:
-            tempInfo = os.stat(CurPath + os.path.sep + Name + last_modify_file_dict[Name])
-        tempDict["up_time"] = time.ctime(tempInfo.st_mtime)
-        tempDict["link"] = 'http://mirrors.opencas.cn/' + Name
-        InfoDict[Name] = tempDict
+            if Name in official:
+                tempDict["official"]=True;
+            else:
+                tempDict["official"]=False;
+            if Name in help_dict:
+                tempDict["doc"]=help_dict[Name]
+            tempInfo = os.stat(CurPath + os.path.sep + Name)
+            if Name in last_modify_file_dict:
+                tempInfo = os.stat(CurPath + os.path.sep + Name + last_modify_file_dict[Name])
+            tempDict["up_time"] = time.ctime(tempInfo.st_mtime)
+            timeArray = time.localtime(tempInfo.st_mtime)
+            tempDict["up_time"]=time.strftime('%Y-%m-%d %H:%M:%S',timeArray)
+            tempDict["link"] = 'http://mirrors.opencas.cn/' + Name
+            InfoDict[Name] = tempDict
     return InfoDict
 
 
@@ -62,7 +64,8 @@ def ContentGen(InfoDict):
 
 def main():
     InfoDict = GetCurPathInfo()
-    Content = ContentGen(InfoDict)
+    dict= sorted(InfoDict.iteritems(), key=lambda d:d[0])
+    Content = ContentGen(dict)
 
 
     with open(os.path.split(os.path.realpath(__file__))[0]+"/state.json", "w") as outFile:
