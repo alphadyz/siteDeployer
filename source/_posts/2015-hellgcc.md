@@ -1,4 +1,4 @@
-title: 2015 HelloGcc 活动成果举办
+title: 2015 HelloGcc 活动成功举办
 category: Event
 date: 2015-11-23
 tags:
