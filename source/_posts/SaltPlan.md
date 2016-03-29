@@ -106,3 +106,11 @@ E5-573G 15寸彩色织物纹理 红色
 E5-573G 15寸彩色织物纹理
 F5-571G 15寸金属织物纹理笔记本
 Aspire R3-131T 360°翻转
+
+<hr/>
+
+`本活动已于2016年3约25日成功结束并成功评奖，恭喜获奖的同学，感谢LinuxStory社区`
+
+获奖信息请访问[LinuxStory](http://www.linuxstory.org/ls-salt-plan-winners/)查看
+
+<br/>
