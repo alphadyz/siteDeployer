@@ -29,7 +29,7 @@ def GetCurPathInfo():
         'pypi':'http://docs.mirrors.opencas.org/latest/pypi/'
     }
 
-    official = ["apache","archlinux","centos","cran","ctan","deepin","deepin-cd","eclipse","epel","ezgo","mariadb","raspbian","gnu"]
+    official = ["apache","archlinux","centos","cran","ctan","deepin","deepin-cd","eclipse","epel","ezgo","mariadb","raspbian","gnu","ubuntu","ubuntu-releases"]
 
     for Name in ChildrenList:
         tempDict={}
