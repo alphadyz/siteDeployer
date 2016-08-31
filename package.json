@@ -4,7 +4,7 @@
   "description": "web site and auto deploy of OpenCAS",
   "private": true,
   "hexo": {
-    "version": "3.1.1"
+    "version": "3.2.2"
   },
   "main": "autoDeploy.js",
   "repository": {
@@ -21,6 +21,7 @@
     "github-webhook-handler": "^0.5.0",
     "hexo": "^3.1.1",
     "hexo-browsersync": "^0.2.0",
+    "hexo-deployer-git": "^0.2.0",
     "hexo-generator-archive": "^0.1.3",
     "hexo-generator-category": "^0.1.3",
     "hexo-generator-tag": "^0.1.2",
@@ -31,7 +32,7 @@
     "hexo-server": "^0.1.2"
   },
   "scripts": {
-    "stop":"forever stopall",
+    "stop": "forever stopall",
     "start": " forever start forever.json",
     "restart": "forever stopall && forever start forever.json"
   },

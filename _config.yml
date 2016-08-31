@@ -68,7 +68,8 @@ theme: corporate
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: git@github.com:opencas/opencas.github.io.git
 
 imagemin:
   enable     : false
