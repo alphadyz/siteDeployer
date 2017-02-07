@@ -6,9 +6,9 @@
 title: OpenCAS
 subtitle: 中科院开源软件协会
 description: official site of OpenCAS
-author: jasine
-language:
-timezone:
+author: OpenCAS
+language: zh
+timezone: Asia/Shanghai
  
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -36,7 +36,7 @@ filename_case: 0
 render_drafts: false
 post_asset_folder: false
 relative_link: false
-future: true
+future: false
 highlight:
   enable: true
   line_number: true
@@ -68,8 +68,8 @@ theme: corporate
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: git@github.com:opencas/opencas.github.io.git
+  type: 
+  repo: 
 
 imagemin:
   enable     : false

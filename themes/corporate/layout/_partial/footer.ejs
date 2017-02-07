@@ -4,14 +4,14 @@
         <div class="row">
           <!-- BEGIN BOTTOM ABOUT BLOCK -->
           <div class="col-md-4 col-sm-6 pre-footer-col">
-            <h2>About Us</h2>
+            <h2>关于我们</h2>
             <p><%- theme.about %></p>
           </div>
           <!-- END BOTTOM ABOUT BLOCK -->
 
           <!-- BEGIN BOTTOM CONTACTS -->
           <div class="col-md-4 col-sm-6 pre-footer-col">
-            <h2>Contact</h2>
+            <h2>联系我们</h2>
             <address class="margin-bottom-40">
               <%= theme.address_1 %><br>
               <%= theme.address_2 %><br>
@@ -25,13 +25,13 @@
           <!-- END BOTTOM CONTACTS -->
 
 	       <div class="col-md-2 col-sm-6 pre-footer-col">
-                     <h2>Wechat</h2>
+                     <h2>微信公众号</h2>
 
           <img style="width:80%" src="/assets/imgs/social/wechat.jpg"> 
 
          </div>  
          <div class="col-md-2 col-sm-6 pre-footer-col">
-                     <h2>Weibo</h2>
+                     <h2>微博</h2>
 
           <img style="width:80%" src="/assets/imgs/social/weibo.png"> 
 
@@ -47,11 +47,10 @@
         <div class="row">
           <!-- BEGIN COPYRIGHT -->
           <div class="col-md-6 col-sm-6 padding-top-10">
-                 Copyright &copy; <%= date(new Date(), 'YYYY') %> <%= config.title %> | Based on <a href="https://github.com/ptsteadman/hexo-theme-corporate">Hexo Corporate</a><br/>中科院开源软件协会镜像站运行于Acer Altos 宏碁服务器 &nbsp · &nbsp;<a href="https://github.com/opencas/site">本站源码</a><br>
- <!-- <a href="javascript:;">Privacy Policy</a>  <a href="javascript:;">Terms of Service</a> -->
+                 Copyright &copy; <%= date(new Date(), 'YYYY') %> <%= config.title %> | Based on <a href="https://github.com/ptsteadman/hexo-theme-corporate">Hexo Corporate</a> |  <a href="http://www.miitbeian.gov.cn/">京ICP备09112257号-87</a><br/>中科院开源软件协会镜像站运行于Acer Altos 宏碁服务器 &nbsp · &nbsp;<a href="https://github.com/opencas/siteDeployer">本站源码</a><br>
           </div>
           <!-- END COPYRIGHT -->
-	  <%- partial('_partial/social') %>
+        <%- partial('_partial/social') %>
         </div>
       </div>
     </div>

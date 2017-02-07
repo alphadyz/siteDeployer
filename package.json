@@ -1,7 +1,7 @@
 {
   "name": "opencas-site",
-  "version": "1.0.0",
-  "description": "web site and auto deploy of OpenCAS",
+  "version": "1.0.1",
+  "description": "Website and Deployment Automatically of OpenCAS",
   "private": true,
   "hexo": {
     "version": "3.2.2"
@@ -9,7 +9,7 @@
   "main": "autoDeploy.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/opencas/site.git"
+    "url": "git+https://github.com/opencas/siteDeployer.git"
   },
   "keywords": [
     "website",
@@ -17,11 +17,10 @@
     "autodeploy"
   ],
   "dependencies": {
-    "forever": "^0.15.1",
-    "github-webhook-handler": "^0.5.0",
-    "hexo": "^3.1.1",
+    "forever": "^0.15.3",
+    "github-webhook-handler": "^0.6.0",
+    "hexo": "^3.2.2",
     "hexo-browsersync": "^0.2.0",
-    "hexo-deployer-git": "^0.2.0",
     "hexo-generator-archive": "^0.1.3",
     "hexo-generator-category": "^0.1.3",
     "hexo-generator-tag": "^0.1.2",
@@ -39,7 +38,7 @@
   "author": "jasine",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/opencas/site/issues"
+    "url": "https://github.com/opencas/siteDeployer/issues"
   },
-  "homepage": "https://github.com/opencas/site#readme"
+  "homepage": "https://github.com/opencas/siteDeployer#readme"
 }
