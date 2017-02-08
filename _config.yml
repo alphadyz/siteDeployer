@@ -19,7 +19,7 @@ permalink_defaults:
 
 # Directory
 source_dir: source
-public_dir: public
+public_dir: /var/www/html
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
@@ -78,3 +78,30 @@ imagemin:
   optimizationLevel: 2
   pngquant   : false
   progressive: false
+
+beautify:
+  types:
+    - html
+    - css
+    - js
+  exclude:
+    - *.min.css
+    - *.min.js
+  html:
+    'indent_inner_html': false
+    'indent_size': 2
+    'indent_with_tabs': false
+  css:
+    'indent_size': 2
+    'newline_between_rules': true
+    'indent_with_tabs': false
+  js:
+    'indent_size': 2
+    'indent_with_tabs': false
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:

@@ -1,7 +1,15 @@
 var http = require('http')
 var createHandler = require('github-webhook-handler')
-var handler = createHandler({ path: '/webhook', secret: '12345678' })
 var process = require('child_process');
+var fs = require('fs');
+var secret_key;
+fs.readFile('secret.key', function (err, data) {
+  if (err) {
+    throw err; 
+  }
+  secret_key = data.toString()
+});
+var handler = createHandler({ path: '/webhook', secret: secret_key })
 
 pullAndGen();
 
