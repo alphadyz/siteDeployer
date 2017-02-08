@@ -1,28 +1,35 @@
-<div class="col-md-12 margin-bottom-40">
-  <h2><%- project.title %></h2>
+<div class="col-md-12 margin-bottom-20">
+  <h2><%- project.title %></a>
+  <small>
+  <% if (project.status.toLowerCase() === "open"){ %>
+  <span class="label label-success">
+  <% } else if (project.status.toLowerCase() === "closed"){ %>
+  <span class="label label-danger">
+  <% } else { %>
+  <span class="label label-warning">
+  <% } %>
+  <%- project.status %></span></small></h2>
   <hr>
-  <div class="col-md-4 col-sm-4">
-    <dl class="dl-horizontal">
-      <dt>状态</dt>
-      <dd><%- project.status %></dd>
-      <dt>语言</dt>
+  <div class="col-md-2 col-sm-2" style="padding: 0">
+    <dl>
+      <dt><h3>语言</h3></dt>
       <dd><%- project.language %></dd>
-      <dt>版本</dt>
+      <dt><h3>版本</h3></dt>
       <dd><%- project.version %></dd>
-      <dt>发起人</dt>
+      <dt><h3>发起人</h3></dt>
       <dd><%- project.author %></dd>
-      <dt>发起时间</dt>
-      <dd><%- project.time %></dd>
+      <dt><h3>启动日期</h3></dt>
+      <dd><%- date(project.time, 'YYYY-MM-DD') %></dd>
     </dl>
   </div>
-  <div class="col-md-8 col-sm-8">
-    <dl class="dl-horizontal">
-      <dt>介绍</dt>
+  <div class="col-md-10 col-sm-10">
+    <dl>
+      <dt><h3>介绍</h3></dt>
       <dd><%- project.content %></dd>
-      <dt>项目地址</dt>
-      <dd><%- project.url %></dd>
-      <dt>Issue</dt>
-      <dd><%- project.issue %></dd>
+      <dt><h3>项目地址</h3></dt>
+      <dd><a href="<%- project.url %>"><%- project.url %></a></dd>
+      <dt><h3>Issues</h3></dt>
+      <dd><a href="<%- project.issue %>"><%- project.issue %></a></dd>
     </dl>
   </div>
 </div>

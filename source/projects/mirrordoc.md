@@ -6,6 +6,7 @@ author: OpenCAS
 time: 2017-02-08
 url: https://github.com/opencas/mirrorDocs
 issue: https://github.com/opencas/mirrorDocs/issues
+layout: projects
 ---
 
 我们现在正在同步的镜像包括：
