@@ -85,8 +85,8 @@ beautify:
     - css
     - js
   exclude:
-    - *.min.css
-    - *.min.js
+    - "*.min.css"
+    - "*.min.js"
   html:
     'indent_inner_html': false
     'indent_size': 2
