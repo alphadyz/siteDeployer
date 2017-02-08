@@ -5,6 +5,8 @@
   <span class="label label-success">
   <% } else if (project.status.toLowerCase() === "closed"){ %>
   <span class="label label-danger">
+  <% } else if (project.status.toLowerCase() === "finish"){ %>
+  <span class="label label-info">
   <% } else { %>
   <span class="label label-warning">
   <% } %>
