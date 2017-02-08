@@ -4,4 +4,4 @@ db.json
 *.log
 node_modules/
 .deploy*/
-secret.key
+autoDeploy.js

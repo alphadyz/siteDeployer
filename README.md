@@ -7,7 +7,8 @@ Generate the website with Hexo and npm.
 * Add a webhook in `Settings/Webhooks/Add webhook`
 * Fill your `Payload URL` with`YourServerAddress:/webhook`(you can change subpath in autoDeploy.js)
 * Select `application/json` in content type field
-* Fill `12345678` in secret field(you can change secret in autoDeploy.js)
+* Rename the `autoDeploy.js.example` to `autoDeploy.js`
+* Fill `secret_key` in secret field(you can change secret in autoDeploy.js)
 * Clone your repository on the serve you want to deploy 
 
 		git clone https://github.com/opencas/siteDeployer && cd siteDeployer
