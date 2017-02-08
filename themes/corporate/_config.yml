@@ -2,8 +2,8 @@
 menu:
   HOME: /
   BLOG: /archives/
-  FORUM: http://forum.opencas.org
   MIRRORS: /mirrors/
+  PROJECTS: /projects/
   ABOUT: /about/
    
 rss: /atom.xml
