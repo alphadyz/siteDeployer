@@ -456,9 +456,9 @@ body.page-header-fixed {
   font-weight: 400;
 
   margin-right: 67px;
-  padding-top: 5px;
+  /*padding-top: 5px;
   padding-bottom: 0px;
-  height: 80px;
+*/  height: 80px;
 }
 
 .header .mobi-toggler {
@@ -763,8 +763,8 @@ body.page-header-fixed {
 	-webkit-transition: all 0.1s ease;
 }*/
 .reduce-header .site-logo {
-	padding-top: 5px;
-	padding-bottom: 5px;
+/*	padding-top: 5px;
+	padding-bottom: 5px;*/
 }
 
 .logoImg{
@@ -776,8 +776,8 @@ body.page-header-fixed {
 
 @media (min-width: 1025px) {
 	.reduce-header .header-navigation > ul > li > a {
-		padding: 28px 12px 17px;
-	}
+		/*padding: 28px 12px 17px;
+*/	}
 	.ecommerce .reduce-header .header-navigation > ul > li > a {
 		padding: 23px 12px 20px;
 	}
